@@ -136,7 +136,7 @@
                         <h2>Price Range</h2>
                         <div class="well">
                             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                            <b>$ 0</b> <b class="pull-right">$ 600</b>
+                            <b>৳ 0</b> <b class="pull-right">৳ 600</b>
                         </div>
                     </div><!--/price-range-->
 
@@ -155,13 +155,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product12.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -180,13 +180,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product11.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -205,13 +205,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product10.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -230,13 +230,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product9.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -256,13 +256,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product8.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -282,13 +282,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/shop/product7.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -308,13 +308,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product6.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -334,13 +334,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product5.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -360,13 +360,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product4.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -386,13 +386,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product3.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -413,13 +413,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product2.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -439,13 +439,13 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="assets/front_end_assets/images/home/product1.jpg" alt="" />
-                                    <h2>$56</h2>
+                                    <h2>৳56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
+                                        <h2>৳56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>

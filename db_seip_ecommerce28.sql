@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2016 at 03:50 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Dec 05, 2016 at 08:42 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `db_seip_ecommerce28`
@@ -26,12 +26,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_admin`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_admin` (
-`admin_id` int(3) NOT NULL,
+CREATE TABLE `tbl_admin` (
+  `admin_id` int(3) NOT NULL,
   `admin_name` varchar(50) NOT NULL,
   `email_address` varchar(256) NOT NULL,
   `password` varchar(32) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -46,12 +46,12 @@ INSERT INTO `tbl_admin` (`admin_id`, `admin_name`, `email_address`, `password`) 
 -- Table structure for table `tbl_category`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_category` (
-`category_id` int(3) NOT NULL,
+CREATE TABLE `tbl_category` (
+  `category_id` int(3) NOT NULL,
   `category_name` varchar(100) NOT NULL,
   `category_description` text NOT NULL,
   `publication_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_category`
@@ -69,8 +69,8 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_descriptio
 -- Table structure for table `tbl_customer`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_customer` (
-`customer_id` int(11) NOT NULL,
+CREATE TABLE `tbl_customer` (
+  `customer_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `email_address` varchar(256) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `tbl_customer` (
   `city` varchar(100) NOT NULL,
   `district` varchar(50) NOT NULL,
   `activation_status` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_customer`
@@ -108,12 +108,12 @@ INSERT INTO `tbl_customer` (`customer_id`, `first_name`, `last_name`, `email_add
 -- Table structure for table `tbl_manufacturer`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_manufacturer` (
-`manufacturer_id` int(3) NOT NULL,
+CREATE TABLE `tbl_manufacturer` (
+  `manufacturer_id` int(3) NOT NULL,
   `manufacturer_name` varchar(100) NOT NULL,
   `manufacturer_description` text NOT NULL,
   `publication_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_manufacturer`
@@ -132,14 +132,14 @@ INSERT INTO `tbl_manufacturer` (`manufacturer_id`, `manufacturer_name`, `manufac
 -- Table structure for table `tbl_order`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_order` (
-`order_id` int(11) NOT NULL,
+CREATE TABLE `tbl_order` (
+  `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `shipping_id` int(11) NOT NULL,
   `order_total` float(10,2) NOT NULL,
   `order_status` varchar(25) NOT NULL DEFAULT 'pending',
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_order`
@@ -156,15 +156,15 @@ INSERT INTO `tbl_order` (`order_id`, `customer_id`, `shipping_id`, `order_total`
 -- Table structure for table `tbl_order_details`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_order_details` (
-`order_details_id` int(11) NOT NULL,
+CREATE TABLE `tbl_order_details` (
+  `order_details_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_name` varchar(100) NOT NULL,
   `product_price` float(10,2) NOT NULL,
   `product_quantity` int(7) NOT NULL,
   `product_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_order_details`
@@ -184,13 +184,13 @@ INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `
 -- Table structure for table `tbl_payment`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_payment` (
-`payment_id` int(11) NOT NULL,
+CREATE TABLE `tbl_payment` (
+  `payment_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `payment_type` varchar(40) NOT NULL,
   `payment_status` varchar(25) NOT NULL DEFAULT 'pending',
   `payment_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_payment`
@@ -207,8 +207,8 @@ INSERT INTO `tbl_payment` (`payment_id`, `order_id`, `payment_type`, `payment_st
 -- Table structure for table `tbl_product`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_product` (
-`product_id` int(11) NOT NULL,
+CREATE TABLE `tbl_product` (
+  `product_id` int(11) NOT NULL,
   `product_name` varchar(256) NOT NULL,
   `category_id` int(3) NOT NULL,
   `manufacturer_id` int(3) NOT NULL,
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `tbl_product` (
   `product_long_description` text NOT NULL,
   `product_image` text NOT NULL,
   `publication_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_product`
@@ -239,15 +239,15 @@ INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `manufac
 -- Table structure for table `tbl_shipping`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_shipping` (
-`shipping_id` int(11) NOT NULL,
+CREATE TABLE `tbl_shipping` (
+  `shipping_id` int(11) NOT NULL,
   `full_name` varchar(100) NOT NULL,
   `email_address` varchar(100) NOT NULL,
   `phone_number` varchar(30) NOT NULL,
   `address` text NOT NULL,
   `city` varchar(50) NOT NULL,
   `district` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_shipping`
@@ -264,15 +264,15 @@ INSERT INTO `tbl_shipping` (`shipping_id`, `full_name`, `email_address`, `phone_
 -- Table structure for table `tbl_temp_cart`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_temp_cart` (
-`temp_cart_id` int(11) NOT NULL,
+CREATE TABLE `tbl_temp_cart` (
+  `temp_cart_id` int(11) NOT NULL,
   `session_id` varchar(256) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_name` varchar(256) NOT NULL,
   `product_price` float(10,2) NOT NULL,
   `product_quantity` int(7) NOT NULL,
   `product_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_temp_cart`
@@ -296,61 +296,61 @@ INSERT INTO `tbl_temp_cart` (`temp_cart_id`, `session_id`, `product_id`, `produc
 -- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
- ADD PRIMARY KEY (`admin_id`);
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
- ADD PRIMARY KEY (`category_id`);
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
- ADD PRIMARY KEY (`customer_id`);
+  ADD PRIMARY KEY (`customer_id`);
 
 --
 -- Indexes for table `tbl_manufacturer`
 --
 ALTER TABLE `tbl_manufacturer`
- ADD PRIMARY KEY (`manufacturer_id`);
+  ADD PRIMARY KEY (`manufacturer_id`);
 
 --
 -- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
- ADD PRIMARY KEY (`order_id`);
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
- ADD PRIMARY KEY (`order_details_id`);
+  ADD PRIMARY KEY (`order_details_id`);
 
 --
 -- Indexes for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
- ADD PRIMARY KEY (`payment_id`);
+  ADD PRIMARY KEY (`payment_id`);
 
 --
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
- ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `tbl_shipping`
 --
 ALTER TABLE `tbl_shipping`
- ADD PRIMARY KEY (`shipping_id`);
+  ADD PRIMARY KEY (`shipping_id`);
 
 --
 -- Indexes for table `tbl_temp_cart`
 --
 ALTER TABLE `tbl_temp_cart`
- ADD PRIMARY KEY (`temp_cart_id`);
+  ADD PRIMARY KEY (`temp_cart_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -360,52 +360,52 @@ ALTER TABLE `tbl_temp_cart`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-MODIFY `admin_id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-MODIFY `category_id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `category_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `tbl_manufacturer`
 --
 ALTER TABLE `tbl_manufacturer`
-MODIFY `manufacturer_id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `manufacturer_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
-MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_shipping`
 --
 ALTER TABLE `tbl_shipping`
-MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_temp_cart`
 --
 ALTER TABLE `tbl_temp_cart`
-MODIFY `temp_cart_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `temp_cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -5,7 +5,7 @@
                 <div class="contactinfo">
                     <ul class="nav nav-pills">
                         <li><a href="#"><i class="fa fa-phone"></i> +88 01683111688</a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i> info@dothedeals.com</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> nousin.tasnia@gmail.com</a></li>
                     </ul>
                 </div>
             </div>

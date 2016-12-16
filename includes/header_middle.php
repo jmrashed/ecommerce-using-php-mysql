@@ -15,7 +15,7 @@
                 <div class="btn-group pull-right">
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                            USA
+                            BD
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -27,7 +27,7 @@
 
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                            DOLLAR
+                            TAKA
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -43,6 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                        <li><a href="deliverymethod.php"><i class="fa fa-tasks"></i> Delivery Method</a></li>
                         <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                         <?php if(isset($_SESSION['customer_id'])) { ?>
