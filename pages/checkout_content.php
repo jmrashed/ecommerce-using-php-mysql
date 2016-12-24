@@ -27,7 +27,7 @@ if (isset($_POST['signup'])) {
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h2 class="text-center text-success">You have to login to complete your valuable order. If you are not registered then please register first.</h2>
+                    <h2 class="text-center text-primary">You have to login to complete your valuable order. If you are not registered then please register first.</h2>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ if (isset($_POST['signup'])) {
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="text-center text-success">Registration Point Here</h3>
+                    <h3 class="text-center text-primary">Registration Point Here</h3>
                     <hr/>
                     <form class="form-horizontal" action="" method="post">
                         <fieldset>
@@ -138,7 +138,7 @@ if (isset($_POST['signup'])) {
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="text-center text-success">Login Point Here</h3>
+                    <h3 class="text-center text-primary">Login Point Here</h3>
                     <hr/>
                     <form class="form-horizontal">
                         <fieldset>

@@ -168,6 +168,22 @@ class Application {
         }
     }
     
+    
+        public function save_feedback_info($data) {
+        $sql="INSERT INTO tbl_feedback (name, email, feedback, datetime)"
+                . " VALUES ('$data[name]', '$data[email]', '$data[feedback]',now())";
+        if(mysqli_query($this->db_connect, $sql)) {
+          //  $result= mysqli_query($this->db_connect, $sql);
+            header('Location: feedback.php?feedbackmessage=Send Feedback Successfully.');
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+    
+    
+    
+    
+    
     public function save_order_info($data) {
         $payment_type=$data['payment_type'];
         if($payment_type == 'cash_on_delivery') {
