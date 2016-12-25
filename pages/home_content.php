@@ -1,6 +1,11 @@
 <?php
-    $query_result=$obj_app->select_latest_product_info(); 
-    
+$query_result = $obj_app->select_latest_product_info();
+
+if (isset($_GET['product_id'])) {
+ if(empty( $_SESSION['wishlist_num'])){ $_SESSION['wishlist_num']=0;}
+    $_SESSION['wishlist_num'] = $_SESSION['wishlist_num'] + 1; 
+    $_SESSION['product_id'] = $_GET['product_id'];
+}
 ?>
 
 <section id="slider"><!--slider-->
@@ -213,35 +218,35 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Latest Items</h2>
-                 <?php while ($product_info=  mysqli_fetch_assoc($query_result)) { ?>  
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="pages/<?php echo $product_info['product_image']; ?>" alt="" width="250" height="250" />
-                                    <h2>BDT <?php echo $product_info['product_price']; ?></h2>
-                                    <p><?php echo $product_info['product_name']; ?></p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-                                <div class="product-overlay">
-                                    <div class="overlay-content">
+                    <?php while ($product_info = mysqli_fetch_assoc($query_result)) { ?>  
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="pages/<?php echo $product_info['product_image']; ?>" alt="" width="250" height="250" />
                                         <h2>BDT <?php echo $product_info['product_price']; ?></h2>
                                         <p><?php echo $product_info['product_name']; ?></p>
-                                        <a href="product_details.php?id=<?php echo $product_info['product_id']; ?>" class="btn btn-default add-to-cart">Product Details</a>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <h2>BDT <?php echo $product_info['product_price']; ?></h2>
+                                            <p><?php echo $product_info['product_name']; ?></p>
+                                            <a href="product_details.php?id=<?php echo $product_info['product_id']; ?>" class="btn btn-default add-to-cart">Product Details</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                </ul>
+                                <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li><a href="?product_id=<?= $product_info['product_id']; ?>"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                 <?php } ?>
-                    
+                    <?php } ?>
+
                 </div><!--features_items-->
 
                 <div class="category-tab"><!--category-tab-->

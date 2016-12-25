@@ -42,6 +42,19 @@ class Application {
         }
     }
     
+    
+        public function select_all_product_info($id) {
+        $sql= "SELECT * FROM tbl_product WHERE product_id='$id'";
+      //  echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+           $query_result=mysqli_query($this->db_connect, $sql);
+           return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+    
+    
     public function select_product_info_by_id($product_id) {
         $sql="SELECT p.*, c.category_name, m.manufacturer_name FROM tbl_product as p, tbl_category as c, tbl_manufacturer as m WHERE p.category_id=c.category_id AND p.manufacturer_id=m.manufacturer_id AND product_id='$product_id' ";
         if(mysqli_query($this->db_connect, $sql)) {
@@ -119,10 +132,10 @@ class Application {
                 <span>Email Address: </span> $data[email_address]<br/>
                 <span>Password: </span> $data[password]<br/>
                 <span>To activate your account click on bellow</span><br/>
-                <a href='http://localhost/seip_php28/day_34/seip_ecommerce28/update_customer_status.php?id=$en_customer_id'>http://localhost/seip_php28/day_34/seip_ecommerce28/update_customer_status.php?id=$en_customer_id</a>    
+                <a href='update_customer_status.php?id=$en_customer_id'>update_customer_status.php?id=$en_customer_id</a>    
                     ";
             $headers='Form: info@seip_php28.com';
-            mail($to, $subject, $message, $headers);
+         //   mail($to, $subject, $message, $headers);
             echo $message;
             exit();
             

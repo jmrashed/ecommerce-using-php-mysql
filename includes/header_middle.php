@@ -41,9 +41,9 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav"> 
-                        <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                        <li><a href="wishlist.php"><i class="fa fa-star"></i> Wishlist <?php if(isset($_SESSION['wishlist_num'])){echo $_SESSION['wishlist_num'];} ?> </a></li>
                         <li><a href="deliverymethod.php"><i class="fa fa-tasks"></i> Delivery Method</a></li>
-                        <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                        <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout </a></li>
                         <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                         <li><a href="feedback.php"><i class="fa fa-envelope"></i>Feedback</a></li>
                         <?php if(isset($_SESSION['customer_id'])) { ?>
