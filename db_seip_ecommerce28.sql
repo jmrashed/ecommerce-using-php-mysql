@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 08:42 AM
+-- Generation Time: Dec 25, 2016 at 12:47 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -100,7 +100,44 @@ INSERT INTO `tbl_customer` (`customer_id`, `first_name`, `last_name`, `email_add
 (10, 'Helal ', 'Uddin', 'helal@gmail.com', '25f9e794323b453885f5181f1b624d0b', '01711456123', '3', 'Mmirpur', 'dhaka', 'bangladesh', 0),
 (11, 'Topu', 'chowdhary', 'chowdhary@gmail.com', '202cb962ac59075b964b07152d234b70', '01714151613', '1', 'Mirpur', 'Dhaka', 'bangladesh', 0),
 (12, 'Hasib', 'kamal', 'mehedi@gmail.com', '4297f44b13955235245b2497399d7a93', '312312', '4', 'sadasdas', 'asdasd', 'asdasdasd', 0),
-(13, 'atrmnob', 'chowdhary', 'sm@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '123456', '2', 'asdasdasdasd', 'asdasdasdasas', 'asdasdas', 1);
+(13, 'atrmnob', 'chowdhary', 'sm@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '123456', '2', 'asdasdasdasd', 'asdasdasdasas', 'asdasdas', 1),
+(14, 'test', 'test', 'user@user.com', 'ee11cbb19052e40b07aac0ca060c23ee', '453455', '1', '34345', 'Dhaka', 'Dhaja', 0),
+(15, 'test', 'test', 'user@user.com', 'ee11cbb19052e40b07aac0ca060c23ee', '453455', '1', '34345', 'Dhaka', 'Dhaja', 0),
+(16, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(17, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(18, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(19, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(20, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(21, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(22, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(23, 'trst', 'tret', 'test@user.com', '098f6bcd4621d373cade4e832627b4f6', '354345', '7', 'ret', 'ert', 'ret', 0),
+(24, 'testt', 'testt', 'testt@user.com', '147538da338b770b61e592afc92b1ee6', '32333333333333333', '6', 'testt', 'Dhaka', 'Dhaja', 0),
+(25, 'testt', 'testt', 'testt@user.com', '147538da338b770b61e592afc92b1ee6', '32333333333333333', '6', 'testt', 'Dhaka', 'Dhaja', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_feedback`
+--
+
+CREATE TABLE `tbl_feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `feedback` text NOT NULL,
+  `datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_feedback`
+--
+
+INSERT INTO `tbl_feedback` (`id`, `name`, `email`, `feedback`, `datetime`) VALUES
+(1, 'Dr. Abdullah Al-Amin', 'admin@admin.com', 'teta', '2016-12-25 03:32:01'),
+(2, 'Dr. Abdullah Al-Amin', 'admin@admin.com', 'teta', '2016-12-25 03:32:01'),
+(3, 'Abdullah Shaheen', 'admin@admin.com', 'TEst . Thank you', '2016-12-25 03:33:26'),
+(4, 'Abdullah Shaheen', 'admin@admin.com', 'TEst . Thank you', '2016-12-25 03:33:27'),
+(5, 'Md Rofik Ahmed', 'rupa@gmail.com', 'rrrrrrrrrrrr', '2016-12-25 03:34:40');
 
 -- --------------------------------------------------------
 
@@ -148,7 +185,8 @@ CREATE TABLE `tbl_order` (
 INSERT INTO `tbl_order` (`order_id`, `customer_id`, `shipping_id`, `order_total`, `order_status`, `order_date`) VALUES
 (1, 5, 2, 45540.00, 'pending', '2016-08-09 14:10:35'),
 (2, 5, 2, 1840.00, 'pending', '2016-08-09 14:12:45'),
-(3, 13, 3, 48645.00, 'pending', '2016-08-11 13:20:32');
+(3, 13, 3, 48645.00, 'pending', '2016-08-11 13:20:32'),
+(4, 25, 4, 3105.00, 'pending', '2016-12-25 11:07:08');
 
 -- --------------------------------------------------------
 
@@ -176,7 +214,8 @@ INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `
 (3, 2, 6, 'Fatua', 1600.00, 1, '../assets/product_images/index.jpg'),
 (4, 3, 5, 'Shari', 2700.00, 1, '../assets/product_images/Satellite-U925T-04-copy.jpg'),
 (5, 3, 1, 'T-shirt', 1600.00, 1, '../assets/product_images/indweex.jpg'),
-(6, 3, 4, 'Sony X-periz Z5', 38000.00, 1, '../assets/product_images/sony.jpg');
+(6, 3, 4, 'Sony X-periz Z5', 38000.00, 1, '../assets/product_images/sony.jpg'),
+(7, 4, 5, 'Shari', 2700.00, 1, '../assets/product_images/Satellite-U925T-04-copy.jpg');
 
 -- --------------------------------------------------------
 
@@ -199,7 +238,8 @@ CREATE TABLE `tbl_payment` (
 INSERT INTO `tbl_payment` (`payment_id`, `order_id`, `payment_type`, `payment_status`, `payment_date`) VALUES
 (1, 1, 'cash_on_delivery', 'pending', '2016-08-09 14:10:35'),
 (2, 2, 'cash_on_delivery', 'pending', '2016-08-09 14:12:45'),
-(3, 3, 'cash_on_delivery', 'pending', '2016-08-11 13:20:32');
+(3, 3, 'cash_on_delivery', 'pending', '2016-08-11 13:20:32'),
+(4, 4, 'cash_on_delivery', 'pending', '2016-12-25 11:07:08');
 
 -- --------------------------------------------------------
 
@@ -256,7 +296,8 @@ CREATE TABLE `tbl_shipping` (
 INSERT INTO `tbl_shipping` (`shipping_id`, `full_name`, `email_address`, `phone_number`, `address`, `city`, `district`) VALUES
 (1, 'Hasib Khan', 'sm@gmail.com', '123', 'Dhaka', 'Dhaka', 'Dhaka'),
 (2, 'Mehedi Hasan', 'mehedi@gmail.com', '0177161514', 'Mohammadur', 'Dhaka', 'Dhaka'),
-(3, 'atrmnob chowdhary', 'sm@gmail.com', '123456', 'asdasdasdasd', 'asdasdasdasas', 'asdasdas');
+(3, 'atrmnob chowdhary', 'sm@gmail.com', '123456', 'asdasdasdasd', 'asdasdasdasas', 'asdasdas'),
+(4, 'testt testt', 'testt@user.com', '32333333333333333', 'testt', 'Dhaka', 'Dhaja');
 
 -- --------------------------------------------------------
 
@@ -286,7 +327,9 @@ INSERT INTO `tbl_temp_cart` (`temp_cart_id`, `session_id`, `product_id`, `produc
 (8, '487mssdlgletf7cf0m6lv5toi1', 2, 'Samsung Galaxy DUOS', 25000.00, 1, '../assets/product_images/PA080545.jpg'),
 (9, '487mssdlgletf7cf0m6lv5toi1', 1, 'T-shirt', 1600.00, 1, '../assets/product_images/indweex.jpg'),
 (11, '487mssdlgletf7cf0m6lv5toi1', 4, 'Sony X-periz Z5', 38000.00, 1, '../assets/product_images/sony.jpg'),
-(13, 'g2qourvjeemt7ugsjbam8m6080', 1, 'T-shirt', 1600.00, 1, '../assets/product_images/indweex.jpg');
+(13, 'g2qourvjeemt7ugsjbam8m6080', 1, 'T-shirt', 1600.00, 1, '../assets/product_images/indweex.jpg'),
+(14, 'bv54n9cqoe7hcg2is54v982bb1', 6, 'Fatua', 1600.00, 1, '../assets/product_images/index.jpg'),
+(16, 'sqgc8q8so7e6hu171kkb8v4g56', 6, 'Fatua', 1600.00, 1, '../assets/product_images/index.jpg');
 
 --
 -- Indexes for dumped tables
@@ -309,6 +352,12 @@ ALTER TABLE `tbl_category`
 --
 ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indexes for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_manufacturer`
@@ -370,7 +419,12 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_manufacturer`
 --
@@ -380,17 +434,17 @@ ALTER TABLE `tbl_manufacturer`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
-  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
@@ -400,12 +454,12 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_shipping`
 --
 ALTER TABLE `tbl_shipping`
-  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_temp_cart`
 --
 ALTER TABLE `tbl_temp_cart`
-  MODIFY `temp_cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `temp_cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
