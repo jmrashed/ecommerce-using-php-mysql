@@ -7,7 +7,7 @@ class Super_admin {
         $host_name='localhost';
         $user_name='root';
         $password='';
-        $db_name='db_seip_ecommerce28';
+        $db_name='db_dothedeals';
         $this->db_connect=  mysqli_connect($host_name, $user_name, $password, $db_name);
         if(!$this->db_connect) {
             die('Connection Fail'.  mysqli_error($this->db_connect));
