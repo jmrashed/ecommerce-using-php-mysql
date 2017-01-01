@@ -42,6 +42,30 @@ class Application {
         }
     }
     
+        public function select_latest_between_Product($from,$to) {
+        $sql="SELECT * FROM tbl_product WHERE product_price between '$from' and '$to' and publication_status = 1";
+      // echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+           $query_result=mysqli_query($this->db_connect, $sql);
+           return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+    
+    
+        public function select_latest_Product($name) {
+        $sql="SELECT * FROM tbl_product WHERE product_name like '%$name%' or product_short_description like '%$name%'";
+    //    echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+           $query_result=mysqli_query($this->db_connect, $sql);
+           return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+    
+    
     
         public function select_all_product_info($id) {
         $sql= "SELECT * FROM tbl_product WHERE product_id='$id'";
