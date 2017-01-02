@@ -153,7 +153,7 @@
                         </select>
                     </div>
                     <div class="form-group"> 
-                        <input type="submit" class="btn btn-primary col-md-12" name="search" value="Search">
+                        <input type="submit" class="btn btn-primary col-md-12" name="price_range" value="Search">
                     </div>
                 </form>
 
