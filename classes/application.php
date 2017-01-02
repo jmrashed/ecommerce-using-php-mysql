@@ -158,7 +158,7 @@ class Application {
                 <span>To activate your account click on bellow</span><br/>
                 <a href='update_customer_status.php?id=$en_customer_id'>update_customer_status.php?id=$en_customer_id</a>    
                     ";
-            $headers='Form: info@seip_php28.com';
+            $headers='Form: info@noushin.com';
          //   mail($to, $subject, $message, $headers);
             echo $message;
             exit();

@@ -158,11 +158,7 @@
                 </form>
 
             </div>
-        </div><!--/price-range-->
-
-        <div class="shipping text-center"><!--shipping-->
-            <img src="assets/front_end_assets/images/home/shipping.jpg" alt="" />
-        </div><!--/shipping-->
+        </div> 
 
     </div>
 </div>

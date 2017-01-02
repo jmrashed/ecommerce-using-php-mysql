@@ -12,31 +12,8 @@
                 <div class="logo pull-left">
                     <a href="index.php"><img src="logo.png" alt="" style=" height:40px" /></a>
                 </div>
-                <div class="btn-group pull-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                            BD
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">BD</a></li>
-                            <li><a href="#">Canada</a></li>
-                            <li><a href="#">UK</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                            TAKA
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Canadian Dollar</a></li>
-                            <li><a href="#">Pound</a></li>
-                            <li><a href="#">Taka</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
+                
             </div>
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
