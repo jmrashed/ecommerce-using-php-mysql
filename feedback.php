@@ -2,15 +2,13 @@
 ob_start();
 
 session_start();
-
+$sender_id=2;
 require './classes/application.php';
 $obj_app = new Application();
 
 if (isset($_POST['feedback'])) {
     $obj_app->save_feedback_info($_POST);
 }
-
-
 ?>
 
 
@@ -76,7 +74,9 @@ if (isset($_POST['feedback'])) {
                                 <input  class="form-control" type="email" name="email" placeholder="Email">
                             </div>
                         </div>
-
+                        <input type="hidden" name="type" value="tbl_customer">
+                        <input type="hidden" name="sender_id" value="<?= $sender_id; ?>">
+                        <input type="hidden" name="is_read" value="no">
                         <div class="form-group">
                             <label class="col-md-3"> Feedback Message</label>
                             <div class="col-md-6">
@@ -98,7 +98,7 @@ if (isset($_POST['feedback'])) {
             </div>
         </section>
         <?php
-        //  include './pages/home_content.php';
+//  include './pages/home_content.php';
         ?>
 
 
