@@ -238,8 +238,8 @@ class Application {
     
     
         public function save_feedback_info($data) {
-        $sql="INSERT INTO tbl_feedback (name, email, feedback, datetime)"
-                . " VALUES ('$data[name]', '$data[email]', '$data[feedback]',now())";
+        $sql="INSERT INTO tbl_feedback (name, email, feedback, sender_id, type, is_read, datetime)"
+                . " VALUES ('$data[name]', '$data[email]', '$data[feedback]','$data[sender_id]', '$data[type]', '$data[is_read]', now())";
         if(mysqli_query($this->db_connect, $sql)) {
           //  $result= mysqli_query($this->db_connect, $sql);
             header('Location: feedback.php?feedbackmessage=Send Feedback Successfully.');
