@@ -77,8 +77,39 @@ class Application {
             die('Query problem'.  mysqli_error($this->db_connect) );
         }
     }
+     
+    public function select_product_info_by_category_id($category_id) {
+        $sql="SELECT * FROM tbl_product,tbl_category WHERE tbl_category.category_id=tbl_product.category_id and tbl_category.category_id=$category_id";
+         if(mysqli_query($this->db_connect, $sql)) {
+           $query_result=mysqli_query($this->db_connect, $sql);
+           return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+     
+       public function Save_Review($data) {
+        $sql="INSERT INTO tbl_review (name, email, message, product_id,datetime) "
+                . "VALUES ('$data[name]', '$data[email]', '$data[message]', '$data[product_id]',now())";
+        if(mysqli_query($this->db_connect, $sql)) { 
+            $id=$data[product_id];
+            $r=mysqli_query($this->db_connect, $sql);
+            header('Location: product_details.php?id='.$id);
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
     
-    
+    public function select_review_by_id($product_id) {
+        $sql="SELECT * FROM tbl_review WHERE product_id='$product_id' ";
+        //echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+           $query_result=mysqli_query($this->db_connect, $sql);
+           return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
     public function select_product_info_by_id($product_id) {
         $sql="SELECT p.*, c.category_name, m.manufacturer_name FROM tbl_product as p, tbl_category as c, tbl_manufacturer as m WHERE p.category_id=c.category_id AND p.manufacturer_id=m.manufacturer_id AND product_id='$product_id' ";
         if(mysqli_query($this->db_connect, $sql)) {
