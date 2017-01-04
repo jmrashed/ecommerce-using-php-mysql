@@ -5,6 +5,18 @@ session_start();
 
 require './classes/application.php';
 $obj_app = new Application();
+if(isset($_POST['login'])){
+     
+    $obj_app->customer_login($_POST);
+ 
+}
+
+
+if(isset($_POST['signup'])){
+      $obj_app->save_customer_info($_POST);
+ 
+}
+
 ?>
 
 
@@ -46,77 +58,143 @@ $obj_app = new Application();
         <section>
             <div class="container">
                 <div class="row">
-                    <?php if(isset($_GET['tab'])){ ?>
-                        
-                    
+                    <?php if (isset($_GET['tab'])) { ?>
+
+
                         <h3>Welcome to Sign Up</h3>
-                    <form action="login.php" method="post" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-md-3"> Full Name</label>
-                            <div class="col-md-6">
-                                <input  class="form-control" type="text" name="fullname" placeholder="Fullname">
+                               <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="text-center text-primary">Registration Point Here</h3>
+                    <hr/>
+                    <form class="form-horizontal" action="login.php" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="name">First Name</label>  
+                                <div class="col-md-8">
+                                    <input id="name" name="first_name" type="text" placeholder="Enter your name" class="form-control input-md" required="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3"> User Name</label>
-                            <div class="col-md-6">
-                                <input  class="form-control" type="text" name="username" placeholder="Username">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="name">Last Name</label>  
+                                <div class="col-md-8">
+                                    <input id="name" name="last_name" type="text" placeholder="Enter your name" class="form-control input-md" required="">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="col-md-3"> Password</label>
-                            <div class="col-md-6">
-                                <input class="form-control" type="password" name="password" placeholder="Password">
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="email">Email</label>  
+                                <div class="col-md-8">
+                                    <input id="email" name="email_address" type="email" placeholder="Enter your email id" class="form-control input-md" required="" onblur="ajax_email_check(this.value, 'res'); ">
+                                    <span id="res"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input class="form-control" type="password" name="cpassword" placeholder="Confirm Password">
+
+                            <!-- Password input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">Password</label>
+                                <div class="col-md-8">
+                                    <input id="password" name="password" type="password" placeholder="Enter a password" class="form-control input-md" required="">
+
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                
-                            <div class="col-md-offset-3 col-md-6">
-                                <input type="submit" name="signup" class="btn btn-primary col-md-6" value="Sign Up">
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="contact">Phone Number</label>  
+                                <div class="col-md-8">
+                                    <input id="contact" name="phone_number" type="number" placeholder="Enter your contact no." class="form-control input-md" required="">
+
+                                </div>
                             </div>
-                        </div>
-                                 
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="blood_group">Blood Group</label>
+                                <div class="col-md-8">
+                                    <select id="blood_group" name="blood_group" class="form-control">
+                                        <option value="-1">Select</option>
+                                        <option value="1">A+</option>
+                                        <option value="2">B+</option>
+                                        <option value="3">AB+</option>
+                                        <option value="4">O+</option>
+                                        <option value="5">A-</option>
+                                        <option value="6">B-</option>
+                                        <option value="7">AB-</option>
+                                        <option value="8">O-</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="street">Address</label>  
+                                <div class="col-md-8">
+                                    <textarea class="form-control" name="address"></textarea>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="city">City</label>  
+                                <div class="col-md-8">
+                                    <input id="city" name="city" type="text" placeholder="Enter your city" class="form-control input-md" required="">
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="dist">District</label>  
+                                <div class="col-md-8">
+                                    <input id="dist" name="district" type="text" placeholder="Enter your district" class="form-control input-md" required="">
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="signup"></label>
+                                <div class="col-md-8">
+                                    <button type="submit" id="signup" name="signup" class="btn btn-success btn-block">Sign Up</button>
+                                </div>
+                            </div>
+
+                        </fieldset>
                     </form>
-                       <p class="text-warning text-center">If you are existing user, please <a href="login.php">Login</a> here.</p>
-                       
-                       
-                  <?php  }else {
-                        
+
+                </div>
+            </div>
+        </div>
+                        <p class="text-warning text-center">If you are existing user, please <a href="login.php">Login</a> here.</p>
+
+
+                    <?php } else {
                         ?>
-                    <h3>Welcome to Login</h3>
-                    <form action="login.php" method="post" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-md-3"> User Name</label>
-                            <div class="col-md-6">
-                                <input  class="form-control" type="text" name="username" placeholder="Username">
+                        <h3>Welcome to Login</h3>
+                        <form action="login.php" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3"> Email</label>
+                                <div class="col-md-6">
+                                    <input  class="form-control" type="email" name="email" placeholder="Email">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="col-md-3"> Password</label>
-                            <div class="col-md-6">
-                                <input class="form-control" type="password" name="password" placeholder="Password">
+
+                            <div class="form-group">
+                                <label class="col-md-3"> Password</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="password" name="password" placeholder="Password">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                
-                            <div class="col-md-offset-3 col-md-6">
-                                <input type="submit" name="login" class="btn btn-primary col-md-6" value="Login">
+
+                            <div class="form-group">
+
+                                <div class="col-md-offset-3 col-md-6">
+                                    <input type="submit" name="login" class="btn btn-primary col-md-6" value="Login">
+                                </div>
                             </div>
-                        </div>
-                                 
-                    </form>
-                       <p class="text-warning text-center">If you are not existing user, please <a href="login.php?tab=signup">SignUp</a></p>
-                       
+
+                        </form>
+                        <p class="text-warning text-center">If you are not existing user, please <a href="login.php?tab=signup">SignUp</a></p>
+
                     <?php } ?>
                 </div>
             </div>

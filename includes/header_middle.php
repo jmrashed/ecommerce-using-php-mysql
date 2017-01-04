@@ -24,9 +24,11 @@
                         <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                         <li><a href="feedback.php"><i class="fa fa-envelope"></i>Feedback</a></li>
                         <?php if(isset($_SESSION['customer_id'])) { ?>
+                        <li><a>Welcome to <?=$_SESSION['customer_name'];?> <?=$_SESSION['customer_id'];?></a></li>
                         <li><a href="?status=logout"><i class="fa fa-lock"></i> Logout</a></li>
                         <?php } else { ?>
-                        <li><a href="checkout.php"><i class="fa fa-lock"></i> Login</a></li>
+                        
+                        <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
                         <?php } ?>
                     </ul>
                 </div>

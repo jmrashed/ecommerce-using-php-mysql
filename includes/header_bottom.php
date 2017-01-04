@@ -16,7 +16,7 @@ $query_result = $obj_app->select_all_published_category();
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
                         <li><a href="index.php" class="active">Home</a></li>
-                        <<<<<<< HEAD
+                       
                         <?php while ($category_info = mysqli_fetch_assoc($query_result)) { ?>
 
 
@@ -39,14 +39,13 @@ $query_result = $obj_app->select_all_published_category();
                                 </ul>
                             </li>
                         <?php } ?>
-                        =======
+                       
                         <?php while ($category_info = mysqli_fetch_assoc($query_result)) { ?>
                             <li><a href="category.php?id=<?php echo $category_info['category_id']; ?>"><?php echo $category_info['category_name']; ?></a>
 
                             </li>
                         <?php } ?>
-                        >>>>>>> d25d7c251568f39732a667396666562b3ea40e34
-                    </ul>
+                     </ul>
                 </div>
             </div>
             <div class="col-sm-3">
