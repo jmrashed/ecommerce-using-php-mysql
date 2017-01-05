@@ -7,6 +7,7 @@
             <li><a href="add_product.php"><i class="icon-edit"></i><span class="hidden-tablet"> Add Products</span></a></li>
             <li><a href="manage_product.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Products</span></a></li>
             <li><a href="manage_order.php"><i class="icon-font"></i><span class="hidden-tablet"> Manage Order</span></a></li>
+            <li><a href="userfeedback.php"><i class="icon-envelope"></i><span class="hidden-tablet"> User Feedback</span></a></li>
         </ul>
     </div>
 </div>

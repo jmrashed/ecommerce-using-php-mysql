@@ -43,20 +43,20 @@
                             <a class="btn btn-primary" href="view_order.php?id=<?php echo $order_info['order_id']; ?>" title="View Order">
                                 <i class="halflings-icon white zoom-in"></i>  
                             </a>
-                            <a class="btn btn-primary" href="view_invoice.php?id=<?php echo $order_info['order_id']; ?>" title="View Invoice">
-                                <i class="halflings-icon white zoom-in"></i>  
+                            <a class="btn btn-primary" href="#view_invoice.php?id=<?php echo $order_info['order_id']; ?>" title="View Invoice">
+                                <i class="halflings-icon white tasks"></i>  
                             </a>
                             <a class="btn btn-success" href="?status=unpublished&&id=<?php echo $order_info['order_id']; ?>" title="Download Invoice">
                                 <i class="halflings-icon white download"></i>  
                             </a>
-                            <?php  if ($_SESSION['access_level'] == 1) { ?>
-                            <a class="btn btn-info" href="edit_product.php?id=<?php echo $order_info['order_id']; ?>" title="Edit Order">
+                         
+                            <a class="btn btn-info" href="#edit_product.php?id=<?php echo $order_info['order_id']; ?>" title="Edit Order">
                                 <i class="halflings-icon white edit"></i>  
                             </a>
                             <a class="btn btn-danger" href="?status=delete&&id=<?php echo $order_info['order_id']; ?>" title="Delete Order" onclick="return check_delete(); ">
                                 <i class="halflings-icon white trash"></i> 
                             </a>
-                            <?php } ?>
+                           
                         </td>
                     </tr>
                     <?php } ?>
