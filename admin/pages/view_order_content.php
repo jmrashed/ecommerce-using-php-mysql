@@ -91,7 +91,11 @@
                     <td>Payment Status</td>
                     <td><?php echo $payment_info['payment_status']; ?></td>
                 </tr>
-            </table>            
+            </table>    
+            <?php     
+            $s=$ob_sup_admin->select_order_details($order_id); 
+               $r=mysqli_fetch_assoc($s);
+            ?>
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                 <h2>Product Info</h2>
                 <tr>
@@ -102,13 +106,14 @@
                     <td>Product Quantity</td>
                     <td>Total Price</td>
                 </tr>
-                <tr>
-                    <td>Product ID</td>
-                    <td>Product Name</td>
-                    <td>Product Image</td>
-                    <td>Product Price</td>
-                    <td>Product Quantity</td>
-                    <td>Total Price</td>
+                <tr> 
+                    <td><?=$r['product_id'];?></td>
+                    <td><?=$r['product_name'];?></td>                    
+                    <td><img src="<?=$r['product_image'];?>" class="img img-responsive" style="width:100px; height: 100px;" ></td>
+
+                    <td><?=$r['product_price'];?></td>
+                    <td><?=$r['product_quantity'];?></td>
+                    <td><?=$r['product_price'];?></td>
                 </tr>
             </table>            
         </div>

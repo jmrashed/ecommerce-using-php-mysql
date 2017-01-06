@@ -255,8 +255,20 @@ class Super_admin {
             die('Query problem'.  mysqli_error( $this->db_connect) );
         }
     }
+    public function select_order_details($order_id){
+        
+         $sql="SELECT * from tbl_order_details where order_id=$order_id";
+     //   echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+            $query_result=mysqli_query($this->db_connect, $sql);
+            return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error( $this->db_connect) );
+        }
+    }
     public function select_customer_info_by_order_id($order_id) {
         $sql="SELECT o.order_id, o.customer_id, c.* FROM tbl_order as o, tbl_customer as c WHERE o.customer_id=c.customer_id AND o.order_id='$order_id' ";
+    //   echo $sql;
         if(mysqli_query($this->db_connect, $sql)) {
             $query_result=mysqli_query($this->db_connect, $sql);
             return $query_result;

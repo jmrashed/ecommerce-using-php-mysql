@@ -268,6 +268,16 @@ class Application {
             die('Query problem' . mysqli_error($this->db_connect));
         }
     }
+       public function select_my_order_info() {
+        $sql="SELECT o.*, c.first_name, c.last_name, p.payment_type, p.payment_status FROM tbl_order as o, tbl_customer as c, tbl_payment as p WHERE o.customer_id=c.customer_id AND o.order_id=p.order_id";
+        if(mysqli_query($this->db_connect, $sql)) {
+            $query_result=mysqli_query($this->db_connect, $sql);
+            return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error( $this->db_connect) );
+        }
+    }
+    
 
     public function save_feedback_info($data) {
         $sql = "INSERT INTO tbl_feedback (name, email, feedback, sender_id, type, is_read, datetime)"
