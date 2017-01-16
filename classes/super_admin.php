@@ -13,6 +13,17 @@ class Super_admin {
             die('Connection Fail'.  mysqli_error($this->db_connect));
         }
     }
+     public function send_admin_feedback($data) {
+       
+         $sql="UPDATE tbl_feedback SET admin_feedback='$data[admin_feedback]' WHERE id='$data[id]'";
+        echo $sql;
+         if(mysqli_query($this->db_connect, $sql)) {
+            $_SESSION['message']="Admin feedback send successfully";
+            header('Location: userfeedback.php');
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
     
     public function save_category_info($data) {
         $sql="INSERT INTO tbl_category (category_name, category_description, publication_status) VALUES ('$data[category_name]', '$data[category_description]', '$data[publication_status]' )";
@@ -70,6 +81,18 @@ class Super_admin {
             die('Query problem'.  mysqli_error($this->db_connect) );
         }
     }
+    
+    
+    public function user_feedback_delete($data) {
+         $sql="DELETE FROM tbl_feedback WHERE id='$data[id]' ";
+        if(mysqli_query($this->db_connect, $sql)) {
+           $_SESSION['message']='Userfeedback delete successfully';
+            return $_SESSION['message'];
+        } else {
+            die('Query problem'.  mysqli_error($this->db_connect) );
+        }
+    }
+    
     public function delete_category_by_id($category_id) {
         $sql="DELETE FROM tbl_category WHERE category_id='$category_id' ";
         if(mysqli_query($this->db_connect, $sql)) {
@@ -213,6 +236,16 @@ class Super_admin {
         }
     }
 
+      public function select_all_user_feedback() {
+        $sql="SELECT * from tbl_feedback";
+        if(mysqli_query($this->db_connect, $sql)) {
+            $query_result=mysqli_query($this->db_connect, $sql);
+            return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error( $this->db_connect) );
+        }
+    }
+    
     public function select_all_order_info() {
         $sql="SELECT o.*, c.first_name, c.last_name, p.payment_type, p.payment_status FROM tbl_order as o, tbl_customer as c, tbl_payment as p WHERE o.customer_id=c.customer_id AND o.order_id=p.order_id";
         if(mysqli_query($this->db_connect, $sql)) {
@@ -222,8 +255,20 @@ class Super_admin {
             die('Query problem'.  mysqli_error( $this->db_connect) );
         }
     }
+    public function select_order_details($order_id){
+        
+         $sql="SELECT * from tbl_order_details where order_id=$order_id";
+     //   echo $sql;
+        if(mysqli_query($this->db_connect, $sql)) {
+            $query_result=mysqli_query($this->db_connect, $sql);
+            return $query_result;
+        } else {
+            die('Query problem'.  mysqli_error( $this->db_connect) );
+        }
+    }
     public function select_customer_info_by_order_id($order_id) {
         $sql="SELECT o.order_id, o.customer_id, c.* FROM tbl_order as o, tbl_customer as c WHERE o.customer_id=c.customer_id AND o.order_id='$order_id' ";
+    //   echo $sql;
         if(mysqli_query($this->db_connect, $sql)) {
             $query_result=mysqli_query($this->db_connect, $sql);
             return $query_result;
