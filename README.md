@@ -18,7 +18,7 @@ This project is an ecommerce website built using PHP and MySQL. It provides a pl
 Clone the repository:
 
 ```bash
-git clone https://github.com/jmrashed/ecommerce-php-mysql.git
+git clone https://github.com/jmrashed/ecommerce-using-php-mysql.git
 ```
 
 Import the database:
